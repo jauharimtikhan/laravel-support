@@ -1,0 +1,21 @@
+{
+    "name": "jauhar/support",
+    "description": "this package for support laravel inertia",
+    "type": "library",
+    "require": {
+        "guzzlehttp/psr7": "^2.7"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jauhar\\Support\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jauhar-imtikhan",
+            "email": "bangjoe.muns@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
