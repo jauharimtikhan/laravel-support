@@ -21,7 +21,6 @@ class JoeSupport
     $this->db = $db;
     $this->request = $request;
     $this->response = $responseFactory;
-    $this->index();
   }
 
 
