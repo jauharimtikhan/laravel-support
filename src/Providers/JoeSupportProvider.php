@@ -4,6 +4,7 @@ namespace Jauhar\Support\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Jauhar\Support\JoeSupport;
+use Illuminate\Contracts\Routing\ResponseFactory;
 
 class JoeSupportProvider extends ServiceProvider
 {
@@ -14,6 +15,7 @@ class JoeSupportProvider extends ServiceProvider
       return new JoeSupport(
         $app->make('db'),
         $app->make('request'),
+        $app->make(ResponseFactory::class)
       );
     });
   }

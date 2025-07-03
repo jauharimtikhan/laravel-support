@@ -5,6 +5,7 @@
     "illuminate/support": "^12.19",
     "illuminate/database": "^9.0|^10.0|^12.19",
     "illuminate/http": "^9.0|^10.0|^12.19",
+    "illuminate/routing": "^9.0|^10.0|^12.19",
     "illuminate/hashing": "^9.0|^10.0|^12.19"
   },
   "license": "MIT",

@@ -4,7 +4,6 @@ namespace Jauhar\Support;
 
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -12,13 +11,16 @@ class JoeSupport
 {
   protected $db;
   protected $request;
+  protected $response;
 
   public function __construct(
     DatabaseManager $db,
     Request $request,
+    \Illuminate\Contracts\Routing\ResponseFactory $responseFactory,
   ) {
     $this->db = $db;
     $this->request = $request;
+    $this->response = $responseFactory;
     $this->index();
   }
 
@@ -36,7 +38,7 @@ class JoeSupport
       }
       $this->db->table('users')->insert($inputs);
 
-      return Response::json([
+      return $this->response->json([
         'request' => $this->request,
         'db' => [
           'name' => $this->db->getDatabaseName(),
