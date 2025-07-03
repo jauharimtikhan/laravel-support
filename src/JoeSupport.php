@@ -1,4 +1,7 @@
 <?php
+
+namespace Src;
+
 class JoeSupport
 {
 
